@@ -7,7 +7,7 @@ import { BaseNode } from './BaseNode';
 const MIN_WIDTH = 200;
 const MIN_HEIGHT = 80;
 // Extra space added to measured text dimensions to account for node chrome/padding
-const NODE_PADDING = 32;
+const NODE_PADDING = 16;
 
 const VAR_REGEX = /\{\{\s*([a-zA-Z_$][a-zA-Z0-9_$]*)\s*\}\}/g;
 
@@ -47,7 +47,7 @@ export const TextNode = ({ id, data }) => {
       textareaRef.current.style.height = 'auto';
       const scrollH = textareaRef.current.scrollHeight;
       textareaRef.current.style.height = `${scrollH}px`;
-      setHeight(Math.max(MIN_HEIGHT, scrollH + NODE_PADDING*2));
+        setHeight(Math.max(MIN_HEIGHT, scrollH + NODE_PADDING*4));
     }
   };
 

@@ -44,7 +44,13 @@ export const SubmitButton = () => {
 
     return (
         <div className="flex items-center justify-center">
-            <button type="button" onClick={handleSubmit}>Submit</button>
+            <button
+                type="button"
+                onClick={handleSubmit}
+                className="px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 active:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors duration-200 cursor-pointer"
+            >
+                Submit
+            </button>
         </div>
     );
 };

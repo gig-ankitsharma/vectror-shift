@@ -6,7 +6,7 @@ import { useState, useRef, useCallback } from 'react';
 import ReactFlow, { Controls, Background, MiniMap } from 'reactflow';
 import { useStore } from './store';
 import { shallow } from 'zustand/shallow';
-import { InputNode, LLMNode, OutputNode, TextNode } from './nodes';
+import { InputNode, LLMNode, OutputNode, TextNode, TransformNode, NoteNode, TriggerNode, PipelineNode } from './nodes';
 
 import 'reactflow/dist/style.css';
 
@@ -17,6 +17,10 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  transform: TransformNode,
+  note: NoteNode,
+  trigger: TriggerNode,
+  pipeline: PipelineNode,
 };
 
 const selector = (state) => ({
