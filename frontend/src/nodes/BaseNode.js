@@ -3,7 +3,7 @@
 import { Handle } from 'reactflow';
 import { motion } from 'framer-motion';
 
-export const BaseNode = ({ title, handles = [], children, selected }) => {
+export const BaseNode = ({ title, handles = [], children }) => {
   return (
     <motion.div
       className="bg-white border border-indigo-100 rounded-xl min-w-[200px] overflow-hidden"
@@ -11,9 +11,7 @@ export const BaseNode = ({ title, handles = [], children, selected }) => {
       animate={{
         opacity: 1,
         scale: 1,
-        boxShadow: selected
-          ? '0 0 0 2px #6366F1, 0 4px 20px rgba(99,102,241,0.3)'
-          : '0 4px 16px rgba(99,102,241,0.10)',
+        boxShadow:  '0 4px 16px rgba(99,102,241,0.10)',
       }}
       whileHover={{
         scale: 1.025,
