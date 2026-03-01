@@ -9,3 +9,4 @@ export { TransformNode } from './transformNode';
 export { NoteNode } from './noteNode';
 export { TriggerNode } from './triggerNode';
 export { PipelineNode } from './pipelineNode';
+export { FileSaveNode } from './fileSaveNode';

@@ -3,10 +3,11 @@
 import { Handle } from 'reactflow';
 import { motion } from 'framer-motion';
 
-export const BaseNode = ({ title, handles = [], children }) => {
+export const BaseNode = ({ title, handles = [], children, style }) => {
   return (
     <motion.div
       className="bg-white border border-indigo-100 rounded-xl min-w-[200px] overflow-hidden"
+      style={style}
       initial={{ opacity: 0, scale: 0.85 }}
       animate={{
         opacity: 1,

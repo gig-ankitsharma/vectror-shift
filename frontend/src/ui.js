@@ -6,7 +6,7 @@ import { useState, useRef, useCallback } from 'react';
 import ReactFlow, { Controls, Background, MiniMap } from 'reactflow';
 import { useStore } from './store';
 import { shallow } from 'zustand/shallow';
-import { InputNode, LLMNode, OutputNode, TextNode, TransformNode, NoteNode, TriggerNode, PipelineNode } from './nodes';
+import { InputNode, LLMNode, OutputNode, TextNode, TransformNode, NoteNode, TriggerNode, PipelineNode, FileSaveNode } from './nodes';
 
 import 'reactflow/dist/style.css';
 
@@ -21,6 +21,7 @@ const nodeTypes = {
   note: NoteNode,
   trigger: TriggerNode,
   pipeline: PipelineNode,
+  fileSave:FileSaveNode
 };
 
 const selector = (state) => ({
