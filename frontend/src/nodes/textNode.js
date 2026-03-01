@@ -64,40 +64,13 @@ export const TextNode = ({ id, data }) => {
 
   return (
     <BaseNode title="Text" handles={handles} style={{ width, height }}>
-      {variables.length > 0 && (
-        <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, pointerEvents: 'none' }}>
-          {variables.map((v, i) => (
-            <span
-              key={v}
-              style={{
-                position: 'absolute',
-                left: 10,
-                top: `${((i + 1) / (variables.length + 1)) * 100}%`,
-                transform: 'translateY(-50%)',
-                fontSize: 10,
-                color: '#555',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              {v}
-            </span>
-          ))}
-        </div>
-      )}
       {/* Hidden span to accurately measure rendered text width */}
       <span
         ref={measureRef}
         aria-hidden="true"
-        style={{
-          position: 'absolute',
-          visibility: 'hidden',
-          whiteSpace: 'pre',
-          pointerEvents: 'none',
-          font: 'inherit',
-        }}
+        className="absolute invisible whitespace-pre pointer-events-none font-[inherit]"
       />
-      <label>
-        Text:
+      <div>
         <textarea
           ref={textareaRef}
           id={`textarea-${id}`}
@@ -105,17 +78,10 @@ export const TextNode = ({ id, data }) => {
           value={currText}
           onChange={handleChange}
           wrap="off"
-          style={{
-            display: 'block',
-            width: '100%',
-            resize: 'none',
-            overflow: 'hidden',
-            boxSizing: 'border-box',
-            font: 'inherit',
-          }}
+          className="w-full bg-indigo-50 border-0 rounded-lg px-2.5 py-1.5 text-[13px] text-indigo-950 outline-none box-border resize-none overflow-hidden font-[inherit]"
           rows={1}
         />
-      </label>
+      </div>
     </BaseNode>
   );
 };
